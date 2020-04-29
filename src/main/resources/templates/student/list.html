@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layouts/master(title='学生列表')"><!-- layout文件路径-->
+
+<th:block th:fragment="css">
+    <!--如果没有内容，请保持 -->
+
+</th:block>
+
+<div th:fragment="content">
+    <!--Page content-->
+    <!--===================================================-->
+
+    <h1> this is my content.</h1>
+    <!--===================================================-->
+    <!--End page content-->
+    <div >
+        <table class="table table-striped" >
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>score</th>
+            </tr>
+            </thead>
+            <tbody id="students">
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<div th:fragment="scripts">
+    <!--如果没有内容，请保持 -->
+    <script type="text/javascript" src="/pagejs/student/list.js"></script>
+</div>
+</html>
