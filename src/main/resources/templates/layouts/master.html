@@ -8,7 +8,9 @@
     <title th:text="${title}"></title>
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/adminlte.min.css">
+    <link rel="stylesheet" href="/plugins/layui/default/layer.css">
 
     <th:block th:replace="::css">
     </th:block>
@@ -16,6 +18,9 @@
 
 
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+
+
+
     <!--TIPS-->
     <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
@@ -36,6 +41,8 @@
 <!--=================================================-->
 
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script src="/js/adminlte.js"></script>
+<script src="/plugins/layui/layer.js"></script>
 <th:block class="script" th:replace="::scripts"></th:block>
 </body>
 </html>

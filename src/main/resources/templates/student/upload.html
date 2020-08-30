@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layouts/master(title='上传头像')"><!-- layout文件路径-->
+
+
+<th:block th:fragment="css">
+    <!--如果没有内容，请保持 -->
+    <link rel="stylesheet" href="/css/_all-skins.min.css">
+    <link rel="stylesheet" href="/plugins/bootstraptable/bootstrap-table.min.css">
+</th:block>
+
+<div th:fragment="content">
+    <!--Page content-->
+    <!--===================================================-->
+
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">上传头像信息</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form"action="/webapi/student/upload/" method="post" enctype="multipart/form-data">
+            <div class="box-body">
+                <input type="hidden" id="id" name="id" />
+                <div class="form-group">
+                    <label>上传图像</label>
+                    <input type="file" name="file"/>
+                </div>
+
+            </div>
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary">上传</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!--===================================================-->
+    <!--End page content-->
+
+
+</div>
+
+<div th:fragment="scripts">
+    <!--如果没有内容，请保持 -->
+
+    <script type="text/javascript">
+        //使用js取当前的url，用/分开的最后一个就是id
+        $(function () {
+            var url=window.location.href;
+            var urlArr=url.split("/");
+            var len=urlArr.length;
+            var id=urlArr[len-1];
+            console.log("id:"+id);
+            //再赋值给id的input
+            $("#id").val(id);
+
+        })
+    </script>
+</div>
+</html>

@@ -2,9 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org"
       th:replace="layouts/master(title='学生列表')"><!-- layout文件路径-->
 
+
+<script src="/pagejs/student/list.js"></script>
 <th:block th:fragment="css">
     <!--如果没有内容，请保持 -->
-
+    <link rel="stylesheet" href="/plugins/bootstraptable/bootstrap-table.min.css">
 </th:block>
 
 <div th:fragment="content">
@@ -12,27 +14,22 @@
     <!--===================================================-->
 
     <h1> this is my content.</h1>
+
+    <a type="button" class="btn btn-info pull-right" href="/student/add" target="_blank">新增</a>
+    <table class="table table-striped" id="students">
+
+    </table>
     <!--===================================================-->
     <!--End page content-->
-    <div >
-        <table class="table table-striped" >
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>name</th>
-                <th>score</th>
-            </tr>
-            </thead>
-            <tbody id="students">
 
-            </tbody>
 
-        </table>
-    </div>
 </div>
 
 <div th:fragment="scripts">
     <!--如果没有内容，请保持 -->
-    <script type="text/javascript" src="/pagejs/student/list.js"></script>
+
+    <script src="/plugins/bootstraptable/bootstrap-table.min.js"></script>
+    <script src="/plugins/bootstraptable/locale/bootstrap-table-zh-CN.min.js"></script>
+    <script src="/pagejs/student/list.js"></script>
 </div>
 </html>
